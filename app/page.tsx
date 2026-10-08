@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import DockShader from "../components/portfolio/dock-shader"
 
 const profile = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed%20%2811%29-5eM4LcXo9WshDgvNQdAkUCyvwGEgNt.jpg"
 const brand = (slug: string) => `https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/${slug}/mono.svg`
@@ -40,6 +41,6 @@ export default function Home() {
       <section className="card contact" id="contact"><label>GET IN TOUCH</label><h2>Let&apos;s build something<br />that matters</h2><p>Open to product roles, design collaborations, and conversations with fellow operators.</p><div className="contact-actions"><a className="primary" href="https://cal.com/krish-khanvilkar" target="_blank" rel="noreferrer">▣ &nbsp; Schedule a meeting</a><a href="mailto:khanvilkarkrish38@gmail.com">□ &nbsp; Email me</a></div><div className="social"><a href="https://linkedin.com/in/krishkhanvilkar" target="_blank" rel="noreferrer">in</a><a href="https://github.com" target="_blank" rel="noreferrer">◉</a><a href="https://x.com/thekrish__" target="_blank" rel="noreferrer">𝕏</a><a href="https://instagram.com/kr1sh.k_" target="_blank" rel="noreferrer">◎</a></div></section>
       <footer>© 2026 Krish Khanvilkar</footer>
     </div>
-    <nav className="dock" aria-label="Quick navigation"><span className="dock-grid" aria-hidden="true" /><a href="#top" aria-label="Home">⌂</a><a href="#products" aria-label="Products">⊞</a><a href="https://linkedin.com/in/krishkhanvilkar" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a><a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub">◉</a><a href="https://x.com/thekrish__" target="_blank" rel="noreferrer" aria-label="X">𝕏</a><a href="https://instagram.com/kr1sh.k_" target="_blank" rel="noreferrer" aria-label="Instagram">◎</a><a href="#education" aria-label="Education">▦</a><button onClick={() => setLight(!light)} aria-label="Toggle light mode">☼</button></nav>
+    <nav className="dock" aria-label="Quick navigation"><DockShader light={light} /><a href="#top" aria-label="Home">⌂</a><a href="#products" aria-label="Products">⊞</a><a href="https://linkedin.com/in/krishkhanvilkar" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a><a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub">◉</a><a href="https://x.com/thekrish__" target="_blank" rel="noreferrer" aria-label="X">𝕏</a><a href="https://instagram.com/kr1sh.k_" target="_blank" rel="noreferrer" aria-label="Instagram">◎</a><a href="#education" aria-label="Education">▦</a><button onClick={() => setLight(!light)} aria-label="Toggle light mode">☼</button></nav>
   </main>
 }
