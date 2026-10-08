@@ -29,6 +29,14 @@ export default function Home() {
   const [light, setLight] = useState(false)
   const [fullStack, setFullStack] = useState(false)
   const [meetingOpen, setMeetingOpen] = useState(false)
+  useEffect(() => {
+    if (!meetingOpen) return
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMeetingOpen(false)
+    }
+    document.addEventListener("keydown", handleKeyDown)
+    return () => document.removeEventListener("keydown", handleKeyDown)
+  }, [meetingOpen])
   return <main id="top" className={light ? "site light" : "site"}>
     <section className="hero"><div className="avatar-wrap"><img src={profile} alt="Krish Khanvilkar in a snowy mountain landscape" className="avatar" /></div><h1>Krish Khanvilkar</h1><div className="clock"><b /> <Clock /></div><div className="bio"><p>I am an AI builder who falls in love with complex, real-world problems—not just the tech that solves them. I move relentlessly from raw insight to high-velocity prototypes, 0 to 1 executions, designing experiences that feel completely effortless on the surface while remaining deeply rigorous underneath. As AI rapidly evolves, I build right alongside it, architecting products where trust is earned and execution is absolute.</p></div></section>
     <div className="content">
